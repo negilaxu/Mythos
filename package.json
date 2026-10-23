@@ -1,0 +1,22 @@
+{
+  "name": "mythos",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "ne.an",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.6.1",
+    "browser-sync": "^3.0.4",
+    "cssnano": "^8.0.10",
+    "gulp": "^5.0.1",
+    "gulp-postcss": "^10.0.0",
+    "gulp-sass": "^6.0.1",
+    "postcss": "^8.5.31",
+    "sass": "^1.106.1"
+  }
+}
