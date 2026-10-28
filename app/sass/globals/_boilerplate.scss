@@ -20,6 +20,11 @@ body {
   margin-block-end: 50vh;
 }
 
+input,
+button {
+  font-family: u.$font;
+}
+
 img {
   display: block;
   width: 100%;
