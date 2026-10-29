@@ -9,8 +9,8 @@
     "scripts": {
         "sass": "sass app/sass/style.scss dist/style.css",
         "sass:watch": "sass --watch app/sass/style.scss dist/style.css",
-        "build": "sass app/sass/style.scss dist/style.css",
-        "dev": "vite"
+        "dev": "vite",
+        "build": "vite build"
     },
     "devDependencies": {
         "vite": "^7.1.5"
