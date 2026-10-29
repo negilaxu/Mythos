@@ -39,16 +39,16 @@
         left: calc(100% + 40px);
         translate: 0 calc(-30px - 100%);
       }
-
-      path {
-        fill: var(--testimonial-icon);
-      }
     }
 
     @include u.breakpoint-down(large) {
       &:nth-child(3) {
         display: none;
       }
+    }
+
+    path {
+      fill: var(--testimonial-icon);
     }
   }
 
