@@ -13,7 +13,6 @@
 
   &__logo {
     grid-column: 1 / -1;
-    margin-block-end: 0;
   }
 
   &__homelink {
@@ -28,6 +27,7 @@
 
   &__copyright {
     line-height: 1;
+    margin-block-end: 0;
   }
 
   &__column-title {
@@ -47,14 +47,13 @@
     gap: u.rem(16);
     font-size: u.rem(18);
     line-height: 1;
-    margin-block-end: u.rem(10);
     color: var(--text-dark);
 
     &:hover {
-      color: var(--text-link-hover);
+      color: var(--text-link);
 
       .footer__social-path {
-        fill: var(--text-link-hover);
+        fill: var(--text-link);
       }
     }
   }

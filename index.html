@@ -14,8 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/dist/style.css">
-    <script src="app/js/script.js"></script>
+    <script defer src="app/js/script.js"></script>
+    <script type="module" src="app/js/main.js"></script>
 </head>
 
 <body>
@@ -27,29 +27,43 @@
                 <img src="/img/logo-mythos.svg" alt="Mythos Homepage" class="topnav__logo" width="128" height="36">
             </a>
             <nav>
-                <ul class="topnav__links">
-                    <li class="topnav__item">
-                        <a href="" class="topnav__link">Features</a>
-                    </li>
-                    <li class="topnav__item">
-                        <a href="" class="topnav__link">Pricing</a>
-                    </li>
-                    <li class="topnav__item">
-                        <a href="" class="topnav__link">About</a>
-                    </li>
-                </ul>
+                <span id="nav-label" hidden>Navigation</span>
+                <div id="overlay" class="topnav__overlay"></div>
+                <button id="btnOpen" class="topnav__open" aria-expanded="false" aria-labelledby="nav-label">
+                    <img src="img/hamburger.svg" alt="" width="30" height="23">
+                </button>
+                <div id="menuTopNav" class="topnav__menu" role="dialog" aria-labelledby="nav-label">
+                    <button id="btnClose" class="topnav__close">
+                        <img src="img/close-button.svg" alt="" width="30" height="23">
+                    </button>
+                    <ul class="topnav__links">
+                        <li class="topnav__item">
+                            <a href="" class="topnav__link">Home</a>
+                        </li>
+                        <li class="topnav__item">
+                            <a href="" class="topnav__link">Features</a>
+                        </li>
+                        <li class="topnav__item">
+                            <a href="" class="topnav__link">Pricing</a>
+                        </li>
+                        <li class="topnav__item">
+                            <a href="" class="topnav__link">About</a>
+                        </li>
+                    </ul>
+
+                </div>
             </nav>
         </div>
     </header>
     <main id="main">
         <article>
-            <section class="hero">
-                <div class="wrapper hero__wrapper">
+            <section class="hero fb-wrapper">
+                <img src="img/hero-wave.svg" alt="" class="hero__wave fb-wrapper__full" width="1440" height="80">
+                <div class="hero__content fb-wrapper__content">
                     <img src="./img/unicorn.svg" alt="unicorn with stars" class="hero__image" width="483" height="486">
                     <div class="hero__text">
                         <h1 class="hero__title">Find that elusive unicorn.</h1>
-                        <p class="hero__content large">Mythos will enable you to discover the newest startups to invest
-                            in. Powered by AI, used by millions of humans.</p>
+                        <p class="large">Mythos will enable you to discover the newest startups to invest in. Powered by AI, used by millions of humans.</p>
                         <a href="#" class="hero__button button primary">Free Trial</a>
                         <a href="#" class="hero__button button secondary">Pricing</a>
                     </div>
@@ -61,46 +75,69 @@
                     <div class="features__item">
                         <img src="/img/icon-asterisk.svg" alt="" class="features__icon" width="43" height="48">
                         <h3 class="features__title">AI-powered matching</h3>
-                        <p class="features__description">Mauris id vestibulum metus, ut pretium lacus. Phasellus ac mi
-                            magna. Sed scelerisque, turpis vitae consequat vehicula, sem turpis pretium tellus, tempor
-                            posuere turpis est ac velit.</p>
+                        <p class="features__description">Mauris id vestibulum metus, ut pretium lacus. Phasellus ac mi magna. Sed scelerisque, turpis vitae consequat vehicula, sem turpis pretium tellus, tempor posuere turpis est ac velit.</p>
                     </div>
                     <div class="features__item">
                         <img src="/img/icon-bell.svg" alt="" class="features__icon" width="43" height="48">
                         <h3 class="features__title">Protected payments</h3>
-                        <p class="features__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-                            id vestibulum metus, ut pretium lacus.</p>
+                        <p class="features__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id vestibulum metus, ut pretium lacus.</p>
                     </div>
                     <div class="features__item">
                         <img src="/img/icon-payments.svg" alt="" class="features__icon" width="43" height="48">
                         <h3 class="features__title">AI-powered matching</h3>
-                        <p class="features__description">Phasellus ac mi magna. Sed scelerisque, turpis vitae consequat
-                            vehicula, sem turpis pretium tellus, tempor posuere turpis est ac velit.</p>
+                        <p class="features__description">Phasellus ac mi magna. Sed scelerisque, turpis vitae consequat vehicula, sem turpis pretium tellus, tempor posuere turpis est ac velit.</p>
                     </div>
                 </div>
             </section>
-            <section class="fw-feature fullwidth">
+            <section class="fw-feature fullwidth dark">
                 <div class="wrapper fw-feature__wrapper">
                     <h2 class="fw-feature__title">Angel investment matching in real time.</h2>
-                    <p class="fw-feature__description medium fullwidth__description">Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit.
-                        Mauris id vestibulum metus, ut pretium lacus. Phasellus ac mi magna. Sed scelerisque, turpis
-                        vitae.</p>
+                    <p class="fw-feature__description medium fullwidth__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id vestibulum metus, ut pretium lacus. Phasellus ac mi magna. Sed scelerisque, turpis vitae.</p>
                     <img src="img/laptop-dashboard.svg" alt="dashboard showing in the laptop screen"
                         class="fw-feature__image" width="792" height="465">
                 </div>
             </section>
-            <section class="testimonial">
+            <section class="alt-feature">
+                <div class="alt-feature__wrapper wrapper">
+                    <div class="alt-feature__row">
+                        <img src="img/laptop-check.svg" alt="laptop with green checkmark" class="alt-feature__image"
+                            width="401" height="242">
+                        <div class="alt-feature__text">
+                            <h3 class="large"><span>AI-Powered Matching</span>Avoid Human Error</h3>
+                            <p class="medium">Ut sapien lectus, vulputate vitae lacus vel, incidunt sodales ipsum. Proin a sem molestie, pulvinar ante non, laoreet ipsum. Sed nec pretium est. Nunc lectus sem.</p>
+                        </div>
+                    </div>
+                    <div class="alt-feature__row">
+                        <img src="img/tablet-phone.svg" alt="tablet and phone" class="alt-feature__image" width="401"
+                            height="242">
+                        <div class="alt-feature__text">
+                            <h3 class="large"><span>Immediate notifications</span>Never miss an alert again</h3>
+                            <p class="medium">Lorem ipsum dolor sit amet, <a href="#">consectetur adipiscing elit</a>. Sed purus neque, tempor sit amet fringilla in, aliquam et justo. Aenean ac porta urna. Nullam quis mattis mauris.</p>
+                        </div>
+                    </div>
+                    <div class="alt-feature__row">
+                        <img src="img/tablet-payments.svg" alt="tablet payments" class="alt-feature__image" width="401"
+                            height="242">
+                        <div class="alt-feature__text">
+                            <h3 class="large"><span>Protected Payments</span>Send payments from anywhere</h3>
+                            <p class="medium">Ut sapien lectus, vulputate vitae lacus vel, tincidunt sodales ipsum.<a href="#"> Proin a sem mattis </a>, pulvinar ante non, laoreet ipsum. Sed nec pretium est. Nunc lectus sem.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="testimonial dark">
                 <h2 class="visually-hidden">Testimonial</h2>
                 <div class="wrapper testimonial__wrapper">
                     <figure>
-                        <img src="img/quotation-mark-teal.svg" alt="" class="testimonial__icon" width="78" height="66">
+                        <svg class="testimonial__icon" width="78" height="66" viewBox="0 0 78 66" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M17.8829 66C11.922 66 7.41951 63.8319 4.37561 59.4957C1.45854 55.0319 0 48.8463 0 40.9391C0 31.8841 2.21951 23.913 6.65854 17.0261C11.0975 10.1391 17.8829 4.46377 27.0146 0L33.1024 12.2435C27.3951 15.1768 23.0829 18.5565 20.1659 22.3826C17.3756 26.0811 15.9805 30.8 15.9805 36.5391C16.361 36.4116 16.9951 36.3478 17.8829 36.3478C21.9414 36.3478 25.3658 37.6232 28.1561 40.1739C31.0731 42.5971 32.5317 45.9768 32.5317 50.313C32.5317 55.1594 31.1366 58.9855 28.3463 61.7913C25.5561 64.5971 22.0683 66 17.8829 66ZM62.7805 66C56.8196 66 52.3171 63.8319 49.2732 59.4957C46.3561 55.0319 44.8976 48.8463 44.8976 40.9391C44.8976 31.8841 47.1171 23.913 51.5561 17.0261C55.9951 10.1391 62.7805 4.46377 71.9122 0L78 12.2435C72.2927 15.1768 67.9805 18.5565 65.0634 22.3826C62.2731 26.0811 60.8781 30.8 60.8781 36.5391C61.2585 36.4116 61.8927 36.3478 62.7805 36.3478C66.839 36.3478 70.2634 37.6232 73.0537 40.1739C75.9707 42.5971 77.4293 45.9768 77.4293 50.313C77.4293 55.1594 76.0342 58.9855 73.2439 61.7913C70.4536 64.5971 66.9659 66 62.7805 66Z"
+                                fill="#00D3D4" /></svg>
                         <blockquote>
-                            <p class="testimonial__quote">When I first started Evermindly, it was a bootstrapped
-                                business. However, we were quickly
-                                running out of money. Thanks to Mythos, we were matched with investors for our seed
-                                funding and have now secured a Series A round!</p>
+                            <p class="testimonial__quote">When I first started Evermindly, it was a bootstrapped business. However, we were quickly running out of money. Thanks to Mythos, we were matched with investors for our seed funding and have now secured a Series A round!</p>
                         </blockquote>
+                        <svg class="testimonial__icon" width="78" height="66" viewBox="0 0 78 66" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M17.8829 66C11.922 66 7.41951 63.8319 4.37561 59.4957C1.45854 55.0319 0 48.8463 0 40.9391C0 31.8841 2.21951 23.913 6.65854 17.0261C11.0975 10.1391 17.8829 4.46377 27.0146 0L33.1024 12.2435C27.3951 15.1768 23.0829 18.5565 20.1659 22.3826C17.3756 26.0811 15.9805 30.8 15.9805 36.5391C16.361 36.4116 16.9951 36.3478 17.8829 36.3478C21.9414 36.3478 25.3658 37.6232 28.1561 40.1739C31.0731 42.5971 32.5317 45.9768 32.5317 50.313C32.5317 55.1594 31.1366 58.9855 28.3463 61.7913C25.5561 64.5971 22.0683 66 17.8829 66ZM62.7805 66C56.8196 66 52.3171 63.8319 49.2732 59.4957C46.3561 55.0319 44.8976 48.8463 44.8976 40.9391C44.8976 31.8841 47.1171 23.913 51.5561 17.0261C55.9951 10.1391 62.7805 4.46377 71.9122 0L78 12.2435C72.2927 15.1768 67.9805 18.5565 65.0634 22.3826C62.2731 26.0811 60.8781 30.8 60.8781 36.5391C61.2585 36.4116 61.8927 36.3478 62.7805 36.3478C66.839 36.3478 70.2634 37.6232 73.0537 40.1739C75.9707 42.5971 77.4293 45.9768 77.4293 50.313C77.4293 55.1594 76.0342 58.9855 73.2439 61.7913C70.4536 64.5971 66.9659 66 62.7805 66Z"
+                                fill="#00D3D4" /></svg>
                         <div class="testimonial__author-wrapper">
                             <img src="img/author-1x.jpg" alt="Janic Hsu"
                                 srcset="img/author-2x.jpg 2x, img/author-3x.jpg 3x" class="testimonial__author">
@@ -113,17 +150,87 @@
                 </div>
                 </div>
             </section>
-            <section class="fw-cta fullwidth">
+            <section class="blog">
+                <div class="wrapper">
+                    <h2>Recent blog posts</h2>
+                    <div class="blog__grid fullwidth">
+                        <article class="blog__item">
+                            <img class="blog__image" src="img/blog/blog1-2x.jpg" alt="" srcset="/img/blog/blog1-3x.jpg 3x" width="774" height="1032">
+                            <div class="blog__filter"></div>
+                            <div class="blog__text">
+                                <h3 class="blog__title"><a href="">Navigating the Angel Investment Landscape</a></h3>
+                                <p class="x-small">Vestibulum ultrices erat est, non imperdiet velit ultricies a. Proin erat orci, lacinia a eros nec, ultricies rutrum leo.</p>
+                                <div class="blog__meta">
+                                    <time datetime="2024-06-14">June 14, 2024</time>
+                                    <p>8 min read</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="blog__item">
+                            <img class="blog__image" src="img/blog/blog2-2x.jpg" alt="" srcset="/img/blog/blog2-3x.jpg 3x" width="1161" height="774">
+                            <div class="blog__filter"></div>
+                            <div class="blog__text">
+                                <h3 class="blog__title"><a href="">The Ultimate Guide to Finding Promising Startups to Invest in</a></h3>
+                                <p class="x-small">Etiam interdum rhoncus eros id bibendum. Duis rutrum nisl quis accumsan viverra. Morbi risus ante, convallis vel nulla ut, iaculis maximus sapien.</p>
+                                <div class="blog__meta">
+                                    <time datetime="2024-05-21">May 21, 2024</time>
+                                    <p>15 min read</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="blog__item">
+                            <img class="blog__image" src="img/blog/blog3-2x.jpg" alt="" srcset="/img/blog/blog3-3x.jpg 3x" width="985" height="774">
+                            <div class="blog__filter"></div>
+                            <div class="blog__text">
+                                <h3 class="blog__title">Industry Insights: How to Identify Emerging Trends<a href=""></a></h3>
+                                <p class="x-small">Non imperdiet velit ultricies a. Proin erat orci, lacinia a eros  nec, ultricies rutrum leo.</p>
+                                <div class="blog__meta">
+                                    <time datetime="2024-05-09">May 09, 2024</time>
+                                    <p>11 min read</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="blog__item">
+                            <img class="blog__image" src="img/blog/blog4-2x.jpg" alt="" srcset="/img/blog/blog4-3x.jpg 3x" width="801" height="1200">
+                            <div class="blog__filter"></div>
+                            <div class="blog__text">
+                                <h3 class="blog__title">Building Connections to Uncover Investment Opportunities<a href=""></a></h3>
+                                <p class="x-small">Duis rutrum nisl quis accumsan viverra. Morbi risus ante, convallis vel nulla ut, iaculis maximus sapien.</p>
+                                <div class="blog__meta">
+                                    <time datetime="2024-04-18">April 18, 2024</time>
+                                    <p>18 min read</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="blog__item">
+                            <img class="blog__image" src="img/blog/blog5-2x.jpg" alt="" srcset="/img/blog/blog5-3x.jpg 3x" width="1200" height="900">
+                            <div class="blog__filter"></div>
+                            <div class="blog__text">
+                                <h3 class="blog__title">Insider Tips for Finding Hidden Gems<a href=""></a></h3>
+                                <p class="x-small">Vestibulum ultrices erat est, non imperdiet velit ultricies a. Proin erat orci.</p>
+                                <div class="blog__meta">
+                                    <time datetime="2024-03-30">March 30, 2024</time>
+                                    <p>9 min read</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="fw-cta fullwidth dark">
                 <div class="wrapper fw-cta__wrapper">
                     <h2 class="fw-cta__title">Get started with Mythos today</h2>
-                    <p class="fw-cta__description large fullwidth__description">Find the next undiscovered unicorn with
-                        a free 14-day trial.</p>
-                    <a href="" class="fw-cta__button button primary white">Free Trial</a>
+                    <p class="fw-cta__description large fullwidth__description">Contact us to find the next undiscovered unicorn.</p>
+                    <form class="form fw-cta__form">
+                        <label for="email" class="form__label fw-cta__label">E-Mail Address</label>
+                        <input type="email" name="email" id="txtEmail" class="form__text fw-cta__text" placeholder="mail@mail.com">
+                        <button type="submit" class="fw-cta__button button primary white">Contact</button>
+                    </form>
                 </div>
             </section>
         </article>
     </main>
-    <footer class="footer">
+    <footer id="footer" class="footer">
         <h2 class="visually-hidden">Footer</h2>
         <div class="footer__wrapper wrapper">
             <section class="footer__logo">
@@ -155,26 +262,22 @@
                 <ul class="footer__links">
                     <li class="footer__item"><a href="#" class="footer__link"><svg xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 640 640" class="footer__social">
-                                <path
-                                    class="footer__social-path"
+                                <path class="footer__social-path"
                                     d="M576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 440 146.7 540.8 258.2 568.5L258.2 398.2L205.4 398.2L205.4 320L258.2 320L258.2 286.3C258.2 199.2 297.6 158.8 383.2 158.8C399.4 158.8 427.4 162 438.9 165.2L438.9 236C432.9 235.4 422.4 235 409.3 235C367.3 235 351.1 250.9 351.1 292.2L351.1 320L434.7 320L420.3 398.2L351 398.2L351 574.1C477.8 558.8 576 450.9 576 320z" />
                             </svg> Facebook</a></li>
                     <li class="footer__item"><a href="#" class="footer__link"><svg xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 640 640" class="footer__social">
-                                <path
-                                    class="footer__social-path"
+                                <path class="footer__social-path"
                                     d="M320.3 205C256.8 204.8 205.2 256.2 205 319.7C204.8 383.2 256.2 434.8 319.7 435C383.2 435.2 434.8 383.8 435 320.3C435.2 256.8 383.8 205.2 320.3 205zM319.7 245.4C360.9 245.2 394.4 278.5 394.6 319.7C394.8 360.9 361.5 394.4 320.3 394.6C279.1 394.8 245.6 361.5 245.4 320.3C245.2 279.1 278.5 245.6 319.7 245.4zM413.1 200.3C413.1 185.5 425.1 173.5 439.9 173.5C454.7 173.5 466.7 185.5 466.7 200.3C466.7 215.1 454.7 227.1 439.9 227.1C425.1 227.1 413.1 215.1 413.1 200.3zM542.8 227.5C541.1 191.6 532.9 159.8 506.6 133.6C480.4 107.4 448.6 99.2 412.7 97.4C375.7 95.3 264.8 95.3 227.8 97.4C192 99.1 160.2 107.3 133.9 133.5C107.6 159.7 99.5 191.5 97.7 227.4C95.6 264.4 95.6 375.3 97.7 412.3C99.4 448.2 107.6 480 133.9 506.2C160.2 532.4 191.9 540.6 227.8 542.4C264.8 544.5 375.7 544.5 412.7 542.4C448.6 540.7 480.4 532.5 506.6 506.2C532.8 480 541 448.2 542.8 412.3C544.9 375.3 544.9 264.5 542.8 227.5zM495 452C487.2 471.6 472.1 486.7 452.4 494.6C422.9 506.3 352.9 503.6 320.3 503.6C287.7 503.6 217.6 506.2 188.2 494.6C168.6 486.8 153.5 471.7 145.6 452C133.9 422.5 136.6 352.5 136.6 319.9C136.6 287.3 134 217.2 145.6 187.8C153.4 168.2 168.5 153.1 188.2 145.2C217.7 133.5 287.7 136.2 320.3 136.2C352.9 136.2 423 133.6 452.4 145.2C472 153 487.1 168.1 495 187.8C506.7 217.3 504 287.3 504 319.9C504 352.5 506.7 422.6 495 452z" />
                             </svg> Instagram</a></li>
                     <li class="footer__item"><a href="#" class="footer__link"> <svg xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 640 640" class="footer__social">
-                                <path
-                                    class="footer__social-path"
+                                <path class="footer__social-path"
                                     d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z" />
                             </svg> X</a></li>
                     <li class="footer__item"><a href="#" class="footer__link"><svg xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 640 640" class="footer__social">
-                                <path
-                                    class="footer__social-path"
+                                <path class="footer__social-path"
                                     d="M581.7 188.1C575.5 164.4 556.9 145.8 533.4 139.5C490.9 128 320.1 128 320.1 128C320.1 128 149.3 128 106.7 139.5C83.2 145.8 64.7 164.4 58.4 188.1C47 231 47 320.4 47 320.4C47 320.4 47 409.8 58.4 452.7C64.7 476.3 83.2 494.2 106.7 500.5C149.3 512 320.1 512 320.1 512C320.1 512 490.9 512 533.5 500.5C557 494.2 575.5 476.3 581.8 452.7C593.2 409.8 593.2 320.4 593.2 320.4C593.2 320.4 593.2 231 581.8 188.1zM264.2 401.6L264.2 239.2L406.9 320.4L264.2 401.6z" />
                             </svg> YouTube</a></li>
                 </ul>
